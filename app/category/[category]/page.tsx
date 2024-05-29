@@ -14,10 +14,13 @@ export default async function CategoryPage({ params }: { params: { category: str
       .eq('parent_slug', params.category)
   ).data!;
 
+  const products = (await supabase.from('products').select('id, title, price')).data!;
+
   return (
     <main className="flex flex-col gap-2 p-2">
       <CategoryCrumbs categories={ancestors} />
       <CategoryList categories={children} />
+      <pre>{JSON.stringify(products, null, 2)}</pre>
     </main>
   );
 }
