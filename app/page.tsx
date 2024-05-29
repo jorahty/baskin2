@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { createClient } from '@/supabase/server';
 
-export default async function Notes() {
+export default async function HomePage() {
   const supabase = createClient();
 
   const categories = (
