@@ -15,7 +15,9 @@ export default async function CategoryPage({ params }: { params: { category: str
       .eq('parent_slug', params.category)
   ).data!;
 
-  const products = (await supabase.from('products').select('id, title, price')).data!;
+  const products = (
+    await supabase.rpc('get_products_by_category', { category_slug: params.category })
+  ).data!;
 
   return (
     <main className="flex flex-col gap-5 p-10">
