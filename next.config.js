@@ -10,4 +10,14 @@ module.exports = {
       },
     ];
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'smgaxvzzaljxhpqpejww.supabase.co',
+        port: '',
+        pathname: '/storage/v1/object/public/product_images/**',
+      },
+    ],
+  },
 };
