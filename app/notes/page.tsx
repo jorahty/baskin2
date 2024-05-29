@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { createClient } from '@/utils/supabase/server';
+import { createClient } from '@/supabase/server';
 
 export default async function Notes() {
   const supabase = createClient();
