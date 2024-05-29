@@ -16,7 +16,7 @@ export default function CategoryCrumbs({ categories }: { categories: any[] }) {
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        {ancestors.map(({ slug, display_name }) => (
+        {ancestors.map(({ slug, display_name }, index) => (
           <>
             <BreadcrumbItem>
               <BreadcrumbLink href={`/category/${slug}`}>{display_name}</BreadcrumbLink>

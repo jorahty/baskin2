@@ -1,6 +1,7 @@
 import { createClient } from '@/supabase/server';
 import CategoryCrumbs from '@/components/category/crumbs';
 import CategoryList from '@/components/category/list';
+import ProductGrid from '@/components/product/grid';
 
 export default async function CategoryPage({ params }: { params: { category: string } }) {
   const supabase = createClient();
@@ -17,10 +18,10 @@ export default async function CategoryPage({ params }: { params: { category: str
   const products = (await supabase.from('products').select('id, title, price')).data!;
 
   return (
-    <main className="flex flex-col gap-2 p-2">
+    <main className="flex flex-col gap-5 p-10">
       <CategoryCrumbs categories={ancestors} />
       <CategoryList categories={children} />
-      <pre>{JSON.stringify(products, null, 2)}</pre>
+      <ProductGrid products={products} />
     </main>
   );
 }
