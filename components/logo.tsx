@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Logo() {
   return (
-    <Link href="/" className="hidden sm:block">
+    <Link href="/">
       <svg
         width="140"
         className="fill-current"
