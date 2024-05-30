@@ -17,7 +17,7 @@ export default function ProductGrid({ products }: { products: any[] }) {
                 src={src}
                 alt={title}
                 fill
-                sizes="80vw"
+                sizes="(max-width: 520px) 80vw, (max-width: 768px) 40vw, (max-width: 1024px) 30vw, (max-width: 1280px) 25vw, 20vw"
               />
             </div>
             <div className="absolute top-3 right-3">
