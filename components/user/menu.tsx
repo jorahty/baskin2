@@ -6,7 +6,7 @@ export default function UserMenu() {
   return (
     <>
       <UserPlaceholder />
-      <div className="pt-8 flex flex-col gap-4">
+      <div className="pt-8 flex flex-col gap-5">
         <Button variant="secondary" className="w-full">
           Sign in
         </Button>
