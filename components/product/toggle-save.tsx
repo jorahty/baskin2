@@ -6,11 +6,7 @@ import { BookmarkIcon } from '@radix-ui/react-icons';
 import { BookmarkFilledIcon } from '@radix-ui/react-icons';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
-interface ToggleSaveButtonProps {
-  productId: string;
-}
-
-const ToggleSaveButton: React.FC<ToggleSaveButtonProps> = ({ productId }) => {
+export default function ToggleSaveButton({ productId }: { productId: string }) {
   const [isSaved, setIsSaved] = useState<boolean>(false);
 
   // Check if the product is already saved in localStorage on component mount
@@ -50,6 +46,4 @@ const ToggleSaveButton: React.FC<ToggleSaveButtonProps> = ({ productId }) => {
       </Tooltip>
     </TooltipProvider>
   );
-};
-
-export default ToggleSaveButton;
+}
