@@ -1,4 +1,5 @@
 import { createClient } from '@/supabase/server';
+import Navbar from '@/components/navbar';
 import CategoryCrumbs from '@/components/category/crumbs';
 import CategoryList from '@/components/category/list';
 import ProductGrid from '@/components/product/grid';
@@ -15,10 +16,14 @@ export default async function CategoryPage({ params: { slug } }: { params: { slu
   const products = (await supabase.rpc('get_products_by_category', { category_slug: slug })).data!;
 
   return (
-    <main className="flex flex-col gap-5 p-10">
-      <CategoryCrumbs categories={ancestors} />
-      <CategoryList categories={children} />
-      <ProductGrid products={products} />
-    </main>
+    <>
+      <Navbar />
+
+      <main className="flex flex-col gap-5 p-7">
+        <CategoryCrumbs categories={ancestors} />
+        <CategoryList categories={children} />
+        <ProductGrid products={products} />
+      </main>
+    </>
   );
 }
