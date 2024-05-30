@@ -24,7 +24,7 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange>
-          <NextTopLoader showSpinner={false} />
+          <NextTopLoader showSpinner={false} color="#08f" />
           {children}
         </ThemeProvider>
       </body>

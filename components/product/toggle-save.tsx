@@ -34,7 +34,7 @@ export default function ToggleSaveButton({ productId }: { productId: string }) {
         <TooltipTrigger asChild>
           <Button size="icon" className="rounded-full" onClick={toggleSave} variant="outline">
             {isSaved ? (
-              <BookmarkFilledIcon className="w-5 h-5 text-blue-500" />
+              <BookmarkFilledIcon className="w-5 h-5 text-[#08f]" />
             ) : (
               <BookmarkIcon className="w-5 h-5" />
             )}
