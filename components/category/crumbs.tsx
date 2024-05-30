@@ -14,20 +14,22 @@ export default function CategoryCrumbs({ categories }: { categories: any[] }) {
   const category = categories[categories.length - 1];
 
   return (
-    <Breadcrumb>
-      <BreadcrumbList>
-        {ancestors.map(({ slug, display_name }, index) => (
-          <>
-            <BreadcrumbItem>
-              <BreadcrumbLink href={`/category/${slug}`}>{display_name}</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-          </>
-        ))}
-        <BreadcrumbItem>
-          <BreadcrumbPage>{category.display_name}</BreadcrumbPage>
-        </BreadcrumbItem>
-      </BreadcrumbList>
-    </Breadcrumb>
+    <div className="px-6 pt-2">
+      <Breadcrumb>
+        <BreadcrumbList>
+          {ancestors.map(({ slug, display_name }) => (
+            <>
+              <BreadcrumbItem>
+                <BreadcrumbLink href={`/category/${slug}`}>{display_name}</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+            </>
+          ))}
+          <BreadcrumbItem>
+            <BreadcrumbPage>{category.display_name}</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+    </div>
   );
 }

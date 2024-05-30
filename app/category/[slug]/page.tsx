@@ -17,11 +17,12 @@ export default async function CategoryPage({ params: { slug } }: { params: { slu
 
   return (
     <>
-      <Navbar />
-
-      <main className="flex flex-col gap-5 px-7 py-3">
+      <div className="bg-background fixed w-full z-10">
+        <Navbar />
         <CategoryCrumbs categories={ancestors} />
         <CategoryList categories={children} />
+      </div>
+      <main className="px-8 pt-44">
         <ProductGrid products={products} />
       </main>
     </>
