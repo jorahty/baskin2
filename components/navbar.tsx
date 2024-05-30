@@ -1,5 +1,5 @@
 import Logo from '@/components/logo';
-import UserMenu from '@/components/user/menu';
+import UserMenu from '@/components/user/sheet';
 import Search from '@/components/search';
 
 export default function Navbar() {

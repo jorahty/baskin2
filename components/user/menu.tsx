@@ -1,35 +1,22 @@
 import { Button } from '@/components/ui/button';
 import UserPlaceholder from '@/components/user/placeholder';
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
+import { ModeToggle } from '@/components/mode-toggle';
 
-export default function SheetDemo() {
+export default function UserMenu() {
   return (
-    <Sheet>
-      <SheetTrigger asChild className="cursor-pointer">
-        <UserPlaceholder />
-      </SheetTrigger>
-      <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you're done.
-          </SheetDescription>
-        </SheetHeader>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
-          </SheetClose>
-        </SheetFooter>
-      </SheetContent>
-    </Sheet>
+    <>
+      <UserPlaceholder />
+      <div className="pt-8 flex flex-col gap-4">
+        <Button variant="secondary" className="w-full">
+          Sign in
+        </Button>
+
+        <div className="flex justify-between items-center">
+          <p>Theme</p>
+
+          <ModeToggle />
+        </div>
+      </div>
+    </>
   );
 }
