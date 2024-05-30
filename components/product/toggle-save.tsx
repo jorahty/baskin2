@@ -1,10 +1,10 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { BookmarkIcon } from '@radix-ui/react-icons';
 import { BookmarkFilledIcon } from '@radix-ui/react-icons';
-
-import React, { useState, useEffect } from 'react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface ToggleSaveButtonProps {
   productId: string;
@@ -33,13 +33,22 @@ const ToggleSaveButton: React.FC<ToggleSaveButtonProps> = ({ productId }) => {
   };
 
   return (
-    <Button size="icon" className="rounded-full" onClick={toggleSave} variant="outline">
-      {isSaved ? (
-        <BookmarkFilledIcon className="w-5 h-5 text-blue-500" />
-      ) : (
-        <BookmarkIcon className="w-5 h-5" />
-      )}
-    </Button>
+    <TooltipProvider>
+      <Tooltip delayDuration={0}>
+        <TooltipTrigger>
+          <Button size="icon" className="rounded-full" onClick={toggleSave} variant="outline">
+            {isSaved ? (
+              <BookmarkFilledIcon className="w-5 h-5 text-blue-500" />
+            ) : (
+              <BookmarkIcon className="w-5 h-5" />
+            )}
+          </Button>
+        </TooltipTrigger>
+        <TooltipContent>
+          <p>{isSaved ? 'Unsave' : 'Save'}</p>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 };
 
