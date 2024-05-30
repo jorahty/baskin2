@@ -34,7 +34,11 @@ const ToggleSaveButton: React.FC<ToggleSaveButtonProps> = ({ productId }) => {
 
   return (
     <Button size="icon" className="rounded-full" onClick={toggleSave} variant="outline">
-      {isSaved ? <BookmarkFilledIcon className="w-5 h-5" /> : <BookmarkIcon className="w-5 h-5" />}
+      {isSaved ? (
+        <BookmarkFilledIcon className="w-5 h-5 text-blue-500" />
+      ) : (
+        <BookmarkIcon className="w-5 h-5" />
+      )}
     </Button>
   );
 };
