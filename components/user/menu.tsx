@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import UserPlaceholder from '@/components/user/placeholder';
 import {
   Sheet,
   SheetClose,
@@ -14,10 +14,8 @@ import {
 export default function SheetDemo() {
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Avatar className="cursor-pointer">
-          <AvatarFallback>J</AvatarFallback>
-        </Avatar>
+      <SheetTrigger asChild className="cursor-pointer">
+        <UserPlaceholder />
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
