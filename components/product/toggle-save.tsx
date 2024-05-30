@@ -35,7 +35,7 @@ const ToggleSaveButton: React.FC<ToggleSaveButtonProps> = ({ productId }) => {
   return (
     <TooltipProvider>
       <Tooltip delayDuration={0}>
-        <TooltipTrigger>
+        <TooltipTrigger asChild>
           <Button size="icon" className="rounded-full" onClick={toggleSave} variant="outline">
             {isSaved ? (
               <BookmarkFilledIcon className="w-5 h-5 text-blue-500" />
