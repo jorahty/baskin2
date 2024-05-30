@@ -4,12 +4,12 @@ import Search from '@/components/search';
 
 export default function Navbar() {
   return (
-    <section className="py-5 px-7 flex justify-between items-center gap-4">
+    <div className="py-5 px-7 flex justify-between items-center gap-4">
       <Logo />
 
       <Search />
 
       <UserMenu />
-    </section>
+    </div>
   );
 }
