@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Logo from '@/components/logo';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import UserMenu from '@/components/user/menu';
 
 export default function Navbar() {
   return (
@@ -11,9 +11,7 @@ export default function Navbar() {
 
       <p>Search for products...</p>
 
-      <Avatar>
-        <AvatarFallback>J</AvatarFallback>
-      </Avatar>
+      <UserMenu />
     </section>
   );
 }
