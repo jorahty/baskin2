@@ -3,15 +3,9 @@
 import { Monitor, Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+import { Select, SelectContent, SelectItem, SelectTrigger } from '@/components/ui/select';
 
-export function ModeToggle() {
+export default function ThemeSelect() {
   const { theme, setTheme } = useTheme();
 
   const data: any = {

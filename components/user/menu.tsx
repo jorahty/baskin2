@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import UserPlaceholder from '@/components/user/placeholder';
-import { ModeToggle } from '@/components/mode-toggle';
+import ThemeSelect from '@/components/theme/theme-select';
 
 export default function UserMenu() {
   return (
@@ -14,7 +14,7 @@ export default function UserMenu() {
         <div className="flex justify-between items-center">
           <p>Theme</p>
 
-          <ModeToggle />
+          <ThemeSelect />
         </div>
       </div>
     </>

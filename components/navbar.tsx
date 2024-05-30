@@ -1,6 +1,7 @@
 import Logo from '@/components/logo';
-import UserMenu from '@/components/user/sheet';
+import UserSheet from '@/components/user/sheet';
 import Search from '@/components/search';
+import { ThemeDropdown } from '@/components/theme/theme-dropdown';
 
 export default function Navbar() {
   return (
@@ -9,7 +10,10 @@ export default function Navbar() {
 
       <Search />
 
-      <UserMenu />
+      <div className="flex gap-4">
+        <ThemeDropdown />
+        <UserSheet />
+      </div>
     </div>
   );
 }
