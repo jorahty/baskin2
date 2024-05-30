@@ -10,8 +10,8 @@ export default function ProductGrid({ products }: { products: any[] }) {
         const src = `https://smgaxvzzaljxhpqpejww.supabase.co/storage/v1/object/public/product_images/${images[0]}.jpeg`;
 
         return (
-          <Link href={`/product/${id}`}>
-            <div key={id} className="flex flex-col gap-3 relative">
+          <div key={id} className="flex flex-col gap-3 relative">
+            <Link href={`/product/${id}`}>
               <div className="rounded-xl overflow-hidden relative aspect-[8/9]">
                 <Image
                   priority={index === 0}
@@ -22,19 +22,19 @@ export default function ProductGrid({ products }: { products: any[] }) {
                   sizes="(max-width: 520px) 80vw, (max-width: 768px) 40vw, (max-width: 1024px) 30vw, (max-width: 1280px) 25vw, 20vw"
                 />
               </div>
-              <div className="absolute top-3 right-3">
-                <ProductToggleSave productId={id} />
-              </div>
-
-              <div className="flex gap-4">
-                <UserPlaceholder />
-                <div>
-                  <p className="font-semibold">${price.toLocaleString()}</p>
-                  <p>{title}</p>
-                </div>
-              </div>
+            </Link>
+            <div className="absolute top-3 right-3">
+              <ProductToggleSave productId={id} />
             </div>
-          </Link>
+
+            <div className="flex gap-4">
+              <UserPlaceholder />
+              <Link href={`/product/${id}`}>
+                <p className="font-semibold">${price.toLocaleString()}</p>
+                <p>{title}</p>
+              </Link>
+            </div>
+          </div>
         );
       })}
     </div>
