@@ -19,7 +19,7 @@ export default async function CategoryPage({ params: { slug } }: { params: { slu
     <>
       <div className="bg-background fixed w-full z-10">
         <Navbar />
-        <div className="px-4">
+        <div className="px-4 pb-1">
           <CategoryCrumbs categories={ancestors} />
           <CategoryList categories={children} />
         </div>
