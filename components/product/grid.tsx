@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 export default function ProductGrid({ products }: { products: any[] }) {
   return (
@@ -18,7 +19,9 @@ export default function ProductGrid({ products }: { products: any[] }) {
             </div>
 
             <div className="flex gap-4">
-              <div className="w-10 h-10 bg-secondary rounded-full" />
+              <Avatar>
+                <AvatarFallback>J</AvatarFallback>
+              </Avatar>
               <div>
                 <p className="font-semibold">${price.toLocaleString()}</p>
                 <p>{title}</p>

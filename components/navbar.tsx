@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import Logo from './logo';
+import Logo from '@/components/logo';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 export default function Navbar() {
   return (
@@ -7,8 +8,12 @@ export default function Navbar() {
       <Link href="/">
         <Logo />
       </Link>
+
       <p>Search for products...</p>
-      <p>[avatar]</p>
+
+      <Avatar>
+        <AvatarFallback>J</AvatarFallback>
+      </Avatar>
     </section>
   );
 }
