@@ -19,7 +19,7 @@ export default async function CategoryPage({ params: { slug } }: { params: { slu
     <>
       <Navbar />
 
-      <main className="flex flex-col gap-5 p-7">
+      <main className="flex flex-col gap-5 px-7 py-4">
         <CategoryCrumbs categories={ancestors} />
         <CategoryList categories={children} />
         <ProductGrid products={products} />
