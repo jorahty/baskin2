@@ -2,8 +2,8 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import UserPlaceholder from '@/components/user/placeholder';
 import { Input } from '@/components/ui/input';
-import ShareIcon from '../share-icon';
 import ToggleSaveButton from './toggle-save';
+import ShareButton from './share-button';
 
 export default function ProductDetails({
   product: { id, images, title, price, description },
@@ -25,10 +25,7 @@ export default function ProductDetails({
         <h2 className="font-bold text-2xl">{title}</h2>
         <p className="font-semibold text-xl">${price.toLocaleString()}</p>
         <div className="flex gap-4">
-          <Button variant="secondary" className="grow font-semibold">
-            <ShareIcon />
-            Share
-          </Button>
+          <ShareButton />
           <ToggleSaveButton productId={id} variant="secondary" />
         </div>
         <p>{description}</p>
