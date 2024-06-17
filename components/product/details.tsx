@@ -31,7 +31,7 @@ export default function ProductDetails({
         <p>{description}</p>
         <div className="flex gap-3 items-center">
           <UserPlaceholder />
-          <p>Molly Member</p>
+          <p>John Doe</p>
         </div>
         <Input placeholder="Is this available?" />
         <Button>Send</Button>
