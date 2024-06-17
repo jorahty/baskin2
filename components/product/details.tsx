@@ -6,14 +6,12 @@ export default function ProductDetails({ product: { images, title, price, descri
   const src = `https://smgaxvzzaljxhpqpejww.supabase.co/storage/v1/object/public/product_images/${images[0]}.jpeg`;
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center p-8 gap-8">
-      <div className="w-full flex justify-center lg:max-w-md">
-        <div className="w-full max-w-md rounded-xl overflow-hidden relative aspect-square">
-          <Image priority className="object-cover" src={src} alt={title} fill sizes="80vw" />
-        </div>
+    <div className="flex flex-col lg:flex-row justify-center p-8 gap-8 items-center lg:items-start">
+      <div className="w-full max-w-md rounded-xl overflow-hidden relative aspect-square">
+        <Image priority className="object-cover" src={src} alt={title} fill sizes="80vw" />
       </div>
 
-      <div className="flex flex-col gap-4 items-start bg-secondary">
+      <div className="w-full max-w-md lg:w-max flex flex-col gap-4 items-start bg-secondary">
         <p>{title}</p>
         <p className="font-semibold">${price.toLocaleString()}</p>
         <Button variant="secondary">Share</Button>
