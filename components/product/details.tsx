@@ -11,9 +11,9 @@ export default function ProductDetails({ product: { images, title, price, descri
         <Image priority className="object-cover" src={src} alt={title} fill sizes="80vw" />
       </div>
 
-      <div className="w-full max-w-md lg:w-max flex flex-col gap-4 items-start bg-secondary">
-        <p>{title}</p>
-        <p className="font-semibold">${price.toLocaleString()}</p>
+      <div className="w-full max-w-xs flex flex-col gap-4">
+        <h2 className="font-bold text-2xl">{title}</h2>
+        <p className="font-semibold text-xl">${price.toLocaleString()}</p>
         <Button variant="secondary">Share</Button>
         <p>{description}</p>
         <UserPlaceholder />
