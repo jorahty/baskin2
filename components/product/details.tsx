@@ -7,8 +7,10 @@ export default function ProductDetails({ product: { images, title, price, descri
 
   return (
     <div className="flex flex-col lg:flex-row justify-center p-8 gap-8">
-      <div className="w-full lg:max-w-md rounded-xl overflow-hidden relative aspect-square">
-        <Image priority className="object-cover" src={src} alt={title} fill sizes="80vw" />
+      <div className="w-full flex justify-center lg:max-w-md">
+        <div className="w-full max-w-md rounded-xl overflow-hidden relative aspect-square">
+          <Image priority className="object-cover" src={src} alt={title} fill sizes="80vw" />
+        </div>
       </div>
 
       <div className="flex flex-col gap-4 items-start bg-secondary">
