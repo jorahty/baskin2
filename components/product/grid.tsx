@@ -24,7 +24,7 @@ export default function ProductGrid({ products }: { products: any[] }) {
               </div>
             </Link>
             <div className="absolute top-3 right-3">
-              <ProductToggleSave productId={id} />
+              <ProductToggleSave productId={id} variant="outline" />
             </div>
 
             <div className="flex gap-4">

@@ -6,7 +6,7 @@ import { BookmarkIcon } from '@radix-ui/react-icons';
 import { BookmarkFilledIcon } from '@radix-ui/react-icons';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
-export default function ToggleSaveButton({ productId }: { productId: string }) {
+export default function ToggleSaveButton({ productId, variant }: any) {
   const [isSaved, setIsSaved] = useState<boolean>(false);
 
   // Check if the product is already saved in localStorage on component mount
@@ -32,11 +32,11 @@ export default function ToggleSaveButton({ productId }: { productId: string }) {
     <TooltipProvider>
       <Tooltip delayDuration={0}>
         <TooltipTrigger asChild>
-          <Button size="icon" className="rounded-full" onClick={toggleSave} variant="outline">
+          <Button size="icon" className="rounded-full" onClick={toggleSave} variant={variant}>
             {isSaved ? (
               <BookmarkFilledIcon className="w-5 h-5 text-[#08f]" />
             ) : (
-              <BookmarkIcon className="w-5 h-5" />
+              <BookmarkFilledIcon className="w-5 h-5" />
             )}
           </Button>
         </TooltipTrigger>

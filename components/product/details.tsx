@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import UserPlaceholder from '@/components/user/placeholder';
-import { BookmarkFilledIcon } from '@radix-ui/react-icons';
 import { Input } from '@/components/ui/input';
 import ShareIcon from '../share-icon';
+import ToggleSaveButton from './toggle-save';
 
-export default function ProductDetails({ product: { images, title, price, description } }: any) {
+export default function ProductDetails({
+  product: { id, images, title, price, description },
+}: any) {
   const src = `https://smgaxvzzaljxhpqpejww.supabase.co/storage/v1/object/public/product_images/${images[0]}.jpeg`;
 
   return (
@@ -27,9 +29,7 @@ export default function ProductDetails({ product: { images, title, price, descri
             <ShareIcon />
             Share
           </Button>
-          <Button variant="secondary" size="icon" className="rounded-full">
-            <BookmarkFilledIcon className="w-5 h-5" />
-          </Button>
+          <ToggleSaveButton productId={id} variant="secondary" />
         </div>
         <p>{description}</p>
         <div className="flex gap-3 items-center">
