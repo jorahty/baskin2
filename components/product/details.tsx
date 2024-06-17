@@ -18,7 +18,7 @@ export default function ProductDetails({ product: { images, title, price, descri
         </div>
       </div>
 
-      <div className="w-full max-w-xs flex flex-col gap-5">
+      <div className="w-full max-w-md lg:max-w-xs flex flex-col gap-5">
         <h2 className="font-bold text-2xl">{title}</h2>
         <p className="font-semibold text-xl">${price.toLocaleString()}</p>
         <div className="flex gap-4">
