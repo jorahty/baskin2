@@ -14,7 +14,7 @@ export default function CategoryCrumbs({ categories }: { categories: any[] }) {
   const category = categories[categories.length - 1];
 
   return (
-    <div className="px-6 pt-2">
+    <div className="px-4">
       <Breadcrumb>
         <BreadcrumbList>
           {ancestors.map(({ slug, display_name }) => (

@@ -16,17 +16,15 @@ export default async function CategoryPage({ params: { slug } }: { params: { slu
   const products = (await supabase.rpc('get_products_by_category', { category_slug: slug })).data!;
 
   return (
-    <>
-      <div className="bg-background fixed w-full z-10">
-        <Navbar />
-        <div className="px-4 pb-1">
-          <CategoryCrumbs categories={ancestors} />
-          <CategoryList categories={children} />
-        </div>
+    <main>
+      <Navbar />
+      <div className="px-8 pt-2 flex flex-col gap-4">
+        <CategoryCrumbs categories={ancestors} />
+        <CategoryList categories={children} />
       </div>
-      <main className="px-8 pt-44">
+      <div className="p-8">
         <ProductGrid products={products} />
-      </main>
-    </>
+      </div>
+    </main>
   );
 }
