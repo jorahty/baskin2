@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import UserPlaceholder from '@/components/user/placeholder';
+import { BookmarkFilledIcon, Share2Icon } from '@radix-ui/react-icons';
+import { Input } from '@/components/ui/input';
 
 export default function ProductDetails({ product: { images, title, price, description } }: any) {
   const src = `https://smgaxvzzaljxhpqpejww.supabase.co/storage/v1/object/public/product_images/${images[0]}.jpeg`;
@@ -16,12 +18,24 @@ export default function ProductDetails({ product: { images, title, price, descri
         </div>
       </div>
 
-      <div className="w-full max-w-xs flex flex-col gap-4">
+      <div className="w-full max-w-xs flex flex-col gap-5">
         <h2 className="font-bold text-2xl">{title}</h2>
         <p className="font-semibold text-xl">${price.toLocaleString()}</p>
-        <Button variant="secondary">Share</Button>
+        <div className="flex gap-4">
+          <Button variant="secondary" className="grow font-semibold">
+            <Share2Icon className="mr-2 h-4 w-4" />
+            Share
+          </Button>
+          <Button variant="secondary" size="icon" className="rounded-full">
+            <BookmarkFilledIcon className="w-5 h-5" />
+          </Button>
+        </div>
         <p>{description}</p>
-        <UserPlaceholder />
+        <div className="flex gap-3 items-center">
+          <UserPlaceholder />
+          <p>Molly Member</p>
+        </div>
+        <Input placeholder="Is this available?" />
         <Button>Send</Button>
       </div>
     </div>
