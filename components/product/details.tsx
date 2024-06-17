@@ -4,21 +4,19 @@ import UserPlaceholder from '@/components/user/placeholder';
 import { Input } from '@/components/ui/input';
 import ToggleSaveButton from './toggle-save';
 import ShareButton from './share-button';
+import ImageSelect from './image-select';
+
+interface Props {
+  product: any;
+}
 
 export default function ProductDetails({
   product: { id, images, title, price, description },
-}: any) {
-  const src = `https://smgaxvzzaljxhpqpejww.supabase.co/storage/v1/object/public/product_images/${images[0]}.jpeg`;
-
+}: Props) {
   return (
     <div className="flex flex-col lg:flex-row justify-center p-8 gap-8 items-center lg:items-start">
       <div className="w-full max-w-md">
-        <div className="rounded-xl overflow-hidden relative aspect-square">
-          <Image priority className="object-cover" src={src} alt={title} fill sizes="80vw" />
-        </div>
-        <div className="flex justify-center">
-          <h1>{/* TODO */}</h1>
-        </div>
+        <ImageSelect images={images} alt={title} />
       </div>
 
       <div className="w-full max-w-md lg:max-w-xs flex flex-col gap-5">
