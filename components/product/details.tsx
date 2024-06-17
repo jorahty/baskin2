@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import UserPlaceholder from '@/components/user/placeholder';
-import { BookmarkFilledIcon, Share2Icon } from '@radix-ui/react-icons';
+import { BookmarkFilledIcon } from '@radix-ui/react-icons';
 import { Input } from '@/components/ui/input';
+import ShareIcon from '../share-icon';
 
 export default function ProductDetails({ product: { images, title, price, description } }: any) {
   const src = `https://smgaxvzzaljxhpqpejww.supabase.co/storage/v1/object/public/product_images/${images[0]}.jpeg`;
@@ -23,7 +24,7 @@ export default function ProductDetails({ product: { images, title, price, descri
         <p className="font-semibold text-xl">${price.toLocaleString()}</p>
         <div className="flex gap-4">
           <Button variant="secondary" className="grow font-semibold">
-            <Share2Icon className="mr-2 h-4 w-4" />
+            <ShareIcon />
             Share
           </Button>
           <Button variant="secondary" size="icon" className="rounded-full">
