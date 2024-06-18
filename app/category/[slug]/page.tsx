@@ -3,6 +3,7 @@ import Navbar from '@/components/navbar';
 import CategoryCrumbs from '@/components/category/crumbs';
 import CategoryList from '@/components/category/list';
 import ProductGrid from '@/components/product/grid';
+import Saved from './saved';
 
 export default async function CategoryPage({ params: { slug } }: { params: { slug: string } }) {
   const supabase = createClient();
@@ -13,7 +14,15 @@ export default async function CategoryPage({ params: { slug } }: { params: { slu
     await supabase.from('categories').select('slug, display_name').eq('parent_slug', slug)
   ).data!;
 
-  const products = (await supabase.rpc('get_products_by_category', { category_slug: slug })).data!;
+  let content;
+
+  if (slug == 'saved') {
+    content = <Saved />;
+  } else {
+    const products = (await supabase.rpc('get_products_by_category', { category_slug: slug }))
+      .data!;
+    content = <ProductGrid products={products} />;
+  }
 
   return (
     <main>
@@ -22,9 +31,7 @@ export default async function CategoryPage({ params: { slug } }: { params: { slu
         <CategoryCrumbs categories={ancestors} />
         <CategoryList categories={children} />
       </div>
-      <div className="p-8">
-        <ProductGrid products={products} />
-      </div>
+      <div className="p-8">{content}</div>
     </main>
   );
 }

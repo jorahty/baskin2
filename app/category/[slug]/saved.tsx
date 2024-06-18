@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { createClient } from '@/supabase/client';
 import ProductGrid from '@/components/product/grid';
 
-export default function SavedProducts() {
+export default function Saved() {
   const supabase = createClient();
 
   const [savedProducts, setSavedProducts] = useState<any[]>([]);
