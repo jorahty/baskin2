@@ -18,7 +18,7 @@ export default function UserMenu() {
         </Button>
 
         <Button variant="secondary" className="w-full" asChild>
-          <Link href="/saved">
+          <Link href="/category/saved">
             <BookmarkIcon className="size-5 mr-2" />
             Saved
           </Link>
