@@ -5,7 +5,13 @@ import CategoryList from '@/components/category/list';
 import ProductGrid from '@/components/product/grid';
 import Saved from './saved';
 
-export default async function CategoryPage({ params: { slug } }: { params: { slug: string } }) {
+export default async function CategoryPage({
+  params: { slug },
+  searchParams: { q: searchValue },
+}: {
+  params: { slug: string };
+  searchParams: { q: string };
+}) {
   const supabase = createClient();
 
   const ancestors = (await supabase.rpc('get_ancestors', { slug_value: slug })).data!;
@@ -26,6 +32,7 @@ export default async function CategoryPage({ params: { slug } }: { params: { slu
 
   return (
     <main>
+      {searchValue && <pre>searchValue: {searchValue}</pre>}
       <Navbar />
       <div className="px-8 pt-2 flex flex-col gap-4">
         <CategoryCrumbs categories={ancestors} />
